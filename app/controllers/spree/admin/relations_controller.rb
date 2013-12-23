@@ -34,8 +34,6 @@ module Spree
       def destroy
         @relation = Relation.find(params[:id])
         @relation.destroy
-
-        respond_with(@relation)
       end
 
       private
