@@ -25,7 +25,7 @@ module Spree
         params[:positions].each do |id, index|
           model_class.where(:id => id).update_all(:position => index)
         end
-    
+
         respond_to do |format|
           format.js  { render :text => 'Ok' }
         end
@@ -34,6 +34,8 @@ module Spree
       def destroy
         @relation = Relation.find(params[:id])
         @relation.destroy
+
+        # respond_with(@relation)
       end
 
       private
